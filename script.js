@@ -12974,4 +12974,11 @@ const validWords = [
 
 // select a random word from the words list
 let randomWord = validWords[Math.floor(Math.random() * validWords.length)];
-console.log(randomWord) 
+
+
+// function that checks userinput against randomWord
+
+function checkInput() {
+    // logic 
+    console.log("clicked")
+}
