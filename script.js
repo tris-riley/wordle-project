@@ -12977,5 +12977,9 @@ let randomWord = validWords[Math.floor(Math.random() * validWords.length)];
 console.log(randomWord);
 
 // Recognise when key element is clicked
-const keyboardElements = document.querySelectorAll("button");
-console.log(keyboardElements);
+
+
+// select DIV
+
+
+
