@@ -12974,12 +12974,4 @@ const validWords = [
 
 // select a random word from the words list
 let randomWord = validWords[Math.floor(Math.random() * validWords.length)];
-console.log(randomWord);
-
-// Recognise when key element is clicked
-
-
-// select DIV
-
-
-
+console.log(randomWord) 
