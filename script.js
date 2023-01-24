@@ -12975,10 +12975,14 @@ const validWords = [
 // select a random word from the words list
 let randomWord = validWords[Math.floor(Math.random() * validWords.length)];
 
+// amount of guesses user has left
+let remainingGuesses = 5;
 
 // function that checks userinput against randomWord
 
 function checkInput() {
     // logic 
+    remainingGuesses --; 
     console.log("clicked")
+    console.log(remainingGuesses)
 }
