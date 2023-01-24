@@ -12981,20 +12981,27 @@ document.getElementById(
     "remaining-attempts"
 ).innerHTML = `You have ${remainingAttempts} attempts left`;
 
+// check userAttempt against randomWord
+// if userAttempt is correct they win the game
+// if the userAttempt is incorrect, decrease remaining attempts by 1 and update HTML
 
-// function that checks userinput against randomWord and decreases remaining guesses 
 
 function checkInput() {
-    // logic
-    remainingAttempts--;
+    let userAttempt = document.getElementById("userAttempt");
+    if (userAttempt === randomWord) {
+        console.log("correct");
+    } else {
+        remainingAttempts--;
     if (remainingAttempts === 0) {
         document.getElementById(
             "remaining-attempts"
         ).innerHTML = `You have ${remainingAttempts} attempts left. Game over`;
-     } else {
+    } else {
         document.getElementById(
             "remaining-attempts"
         ).innerHTML = `You have ${remainingAttempts} attempts left`;
-     }
-   
+    }
+        console.log("wrong");
+    }
+    
 }
