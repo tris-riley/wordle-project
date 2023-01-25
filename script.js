@@ -12972,12 +12972,11 @@
 //     "ZYMIC",
 // ];
 
-
 // select a random word from the words list
 
-const validWords = ["hello", "happy"]
+const validWords = ["hello", "happy"];
 let randomWord = validWords[Math.floor(Math.random() * validWords.length)];
-console.log(randomWord)
+console.log(randomWord);
 
 // amount of attempts user has left
 let remainingAttempts = 5;
@@ -12989,24 +12988,31 @@ document.getElementById(
 // if userAttempt is correct they win the game
 // if the userAttempt is incorrect, decrease remaining attempts by 1 and update HTML
 
-
 function checkInput() {
     let userAttempt = document.getElementById("userAttempt");
-    console.log(userAttempt.value)
-    if (userAttempt.value === randomWord) {
-        console.log("correct");
+
+    if (userAttempt.value === randomWord && remainingAttempts === 5) {
+        document.getElementById(
+            "remaining-attempts"
+        ).innerHTML = `Congratulations, it took you ${
+            6 - remainingAttempts
+        } attempt to win`;
+    } else if (userAttempt.value === randomWord && remainingAttempts < 5) {
+        document.getElementById(
+            "remaining-attempts"
+        ).innerHTML = `Congratulations, it took you ${
+            6 - remainingAttempts
+        } attempts to win`;
     } else {
         remainingAttempts--;
-    if (remainingAttempts === 0) {
-        document.getElementById(
-            "remaining-attempts"
-        ).innerHTML = `You have ${remainingAttempts} attempts left. Game over`;
-    } else {
-        document.getElementById(
-            "remaining-attempts"
-        ).innerHTML = `You have ${remainingAttempts} attempts left`;
+        if (remainingAttempts === 0) {
+            document.getElementById(
+                "remaining-attempts"
+            ).innerHTML = `You have ${remainingAttempts} attempts left. Game over`;
+        } else {
+            document.getElementById(
+                "remaining-attempts"
+            ).innerHTML = `You have ${remainingAttempts} attempts left`;
+        }
     }
-        console.log("wrong");
-    }
-    
 }
