@@ -13,10 +13,11 @@
       <h1>Word Guessing Game</h1>
     </header>
 <main onKeyPress="return checkSubmit(event)">
-<p>5 Letters. 5 attempts. Can you guess the word? Input your response below</p>
+<p>A great man once said ...</p>
 
  <input type ="text" id="userAttempt" >
- <button type="button" id ="submit-button" onclick="checkInput()">Submit</button>
+ <button type="button" id="submit-button" onclick="checkInput()">Submit</button>
+ <button type="button" id="refresh-button" onclick="refreshPage()">Play Again</button>
  
  <p id="remaining-attempts"></p>
  <br>

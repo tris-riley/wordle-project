@@ -13052,3 +13052,6 @@ const checkSubmit = function checkSubmit(e) {
 // Instructions, popup(?)
 // General CSS
 
+function refreshPage() {
+    location.reload();
+}
