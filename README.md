@@ -2,7 +2,7 @@
 GA SEI flex wordle project 
 
 # game URL
-[Find the game here] (https://tris-riley.github.io/wordle-project/)
+[Find the game here][def]
 
 # introduction 
 
@@ -14,3 +14,6 @@ GA SEI flex wordle project
 
 # conclusion 
 
+
+
+[def]: https://tris-riley.github.io/wordle-project/
