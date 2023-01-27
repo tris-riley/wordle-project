@@ -12985,6 +12985,7 @@ document.getElementById(
 
 const checkInput = function check() {
     let userAttempt = document.getElementById("userAttempt");
+    let submitButton = document.getElementById("submit-button")
     
 
     if (userAttempt.value.toLowerCase() === randomWord && remainingAttempts === 5) {
@@ -13006,6 +13007,10 @@ const checkInput = function check() {
             document.getElementById(
                 "remaining-attempts"
             ).innerHTML = `You have ${remainingAttempts} attempts left. Game over`;
+            userAttempt.remove(); 
+            submitButton.remove();
+            
+
         } else {
             document.getElementById(
                 "remaining-attempts"
