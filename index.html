@@ -7,13 +7,17 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=League+Gothic">
   </head>
   <body>
+    
     <header>
-      <h1>Word Guessing Game</h1>
+      <h1 id="top">Gunner Find A Player</h1>
     </header>
+  
 <main onKeyPress="return checkSubmit(event)">
-<p>A great man once said ...</p>
+<p>A great man once said that the first trophy is to finish in the top four. That's how many attempts you'll have to name the Arsenal player. Can you top the league? </p>
 
  <input type ="text" id="userAttempt" >
  <button type="button" id="submit-button" onclick="checkInput()">Submit</button>
@@ -21,10 +25,11 @@
  
  <p id="remaining-attempts"></p>
  <br>
- <h2>Matched Letters</h2>
+ <h2></h2>
  <p id="matched-letters"></p>
- <h2>Attempted Words</h2>
+ <h2></h2>
  <ul id="attempted-words"> </ul>
+<p id="game-counter"></p>
 
 </main>
     <script src="script.js" async defer></script>
