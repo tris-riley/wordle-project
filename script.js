@@ -12972,23 +12972,18 @@ const validWords = [
     "ZYMIC",
 ];
 
-// select a random word from the words list
 
-// const validWords = ["hello", "happy"];
 let randomWord = validWords[Math.floor(Math.random() * validWords.length)].toLowerCase();
 console.log(randomWord);
 
-// amount of attempts user has left
 let remainingAttempts = 5;
 document.getElementById(
     "remaining-attempts"
 ).innerHTML = `You have ${remainingAttempts} attempts left`;
 
-// check userAttempt against randomWord
-// if userAttempt is correct they win the game
-// if the userAttempt is incorrect, decrease remaining attempts by 1 and update HTML
 
-function checkInput() {
+
+const checkInput = function check() {
     let userAttempt = document.getElementById("userAttempt");
     
 
@@ -13004,6 +12999,7 @@ function checkInput() {
         ).innerHTML = `Congratulations, it took you ${
             6 - remainingAttempts
         } attempts to win`;
+
     } else {
         remainingAttempts--;
         if (remainingAttempts === 0) {
@@ -13017,3 +13013,16 @@ function checkInput() {
         }
     }
 }
+
+const checkSubmit = function checkSubmit(e) {
+    if(e && e.keyCode == 13) {
+       checkInput()
+    }
+ } // https://stackoverflow.com/questions/29943/how-to-submit-a-form-when-the-return-key-is-pressed
+
+// TODO \\
+// Instructions, popup(?)
+// General CSS
+// correct letter reveal / hints 
+// add list of words user has attempted? 
+// 
