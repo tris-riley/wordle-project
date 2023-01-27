@@ -12972,8 +12972,8 @@ const validWords = [
     "ZYMIC",
 ];
 
-
-let randomWord = validWords[Math.floor(Math.random() * validWords.length)].toLowerCase();
+let randomWord =
+    validWords[Math.floor(Math.random() * validWords.length)].toLowerCase();
 console.log(randomWord);
 
 let remainingAttempts = 5;
@@ -12981,21 +12981,21 @@ document.getElementById(
     "remaining-attempts"
 ).innerHTML = `You have ${remainingAttempts} attempts left`;
 
-
-
 const checkInput = function check() {
     let userAttempt = document.getElementById("userAttempt");
-    let submitButton = document.getElementById("submit-button")
-    let attemptedWordsList = document.getElementById("attempted-words")
-    
+    let submitButton = document.getElementById("submit-button");
+    let attemptedWordsList = document.getElementById("attempted-words");
 
-    if (userAttempt.value.toLowerCase() === randomWord && remainingAttempts === 5) {
+    if (
+        userAttempt.value.toLowerCase() === randomWord &&
+        remainingAttempts === 5
+    ) {
         document.getElementById(
             "remaining-attempts"
         ).innerHTML = `Congratulations, it took you ${
             6 - remainingAttempts
         } attempt to win`;
-        userAttempt.remove(); 
+        userAttempt.remove();
         submitButton.remove();
     } else if (userAttempt.value === randomWord && remainingAttempts < 5) {
         document.getElementById(
@@ -13003,39 +13003,52 @@ const checkInput = function check() {
         ).innerHTML = `Congratulations, it took you ${
             6 - remainingAttempts
         } attempts to win`;
-        userAttempt.remove(); 
+        userAttempt.remove();
         submitButton.remove();
-
     } else {
         remainingAttempts--;
         if (remainingAttempts === 0) {
             document.getElementById(
                 "remaining-attempts"
             ).innerHTML = `You have ${remainingAttempts} attempts left. Game over`;
-            userAttempt.remove(); 
+            userAttempt.remove();
             submitButton.remove();
-            
-
         } else {
             document.getElementById(
                 "remaining-attempts"
             ).innerHTML = `You have ${remainingAttempts} attempts left`;
-            const attemptedWord = document.createElement("li")
-            attemptedWord.appendChild(document.createTextNode(userAttempt.value))
-            attemptedWordsList.appendChild(attemptedWord)
+            const attemptedWord = document.createElement("li");
+            attemptedWord.appendChild(
+                document.createTextNode(userAttempt.value)
+            );
+            attemptedWordsList.appendChild(attemptedWord);
+
+            let matchingLetters = " ";
+            for (let i = 0; i < userAttempt.value.length; i++) {
+                let letter = userAttempt.value[i];
+                if (randomWord.indexOf(letter) !== -1) {
+                    matchingLetters += letter;
+                    document.getElementById(
+                        "matched-letters"
+                    ).innerHTML = `These letters are in the final answer: ${matchingLetters}
+                    `;
+                }
+            }
         }
     }
-}
+};
+
+// }
+// }
 
 const checkSubmit = function checkSubmit(e) {
-    if(e && e.keyCode == 13) {
-       checkInput()
+    if (e && e.keyCode == 13) {
+        checkInput();
     }
- } // https://stackoverflow.com/questions/29943/how-to-submit-a-form-when-the-return-key-is-pressed
+};
+// https://stackoverflow.com/questions/29943/how-to-submit-a-form-when-the-return-key-is-pressed
 
 // TODO \\
 // Instructions, popup(?)
 // General CSS
-// correct letter reveal / hints 
-// add list of words user has attempted? 
-// 
+
