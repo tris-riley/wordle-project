@@ -12986,6 +12986,7 @@ document.getElementById(
 const checkInput = function check() {
     let userAttempt = document.getElementById("userAttempt");
     let submitButton = document.getElementById("submit-button")
+    let attemptedWordsList = document.getElementById("attempted-words")
     
 
     if (userAttempt.value.toLowerCase() === randomWord && remainingAttempts === 5) {
@@ -12994,12 +12995,16 @@ const checkInput = function check() {
         ).innerHTML = `Congratulations, it took you ${
             6 - remainingAttempts
         } attempt to win`;
+        userAttempt.remove(); 
+        submitButton.remove();
     } else if (userAttempt.value === randomWord && remainingAttempts < 5) {
         document.getElementById(
             "remaining-attempts"
         ).innerHTML = `Congratulations, it took you ${
             6 - remainingAttempts
         } attempts to win`;
+        userAttempt.remove(); 
+        submitButton.remove();
 
     } else {
         remainingAttempts--;
@@ -13015,6 +13020,9 @@ const checkInput = function check() {
             document.getElementById(
                 "remaining-attempts"
             ).innerHTML = `You have ${remainingAttempts} attempts left`;
+            const attemptedWord = document.createElement("li")
+            attemptedWord.appendChild(document.createTextNode(userAttempt.value))
+            attemptedWordsList.appendChild(attemptedWord)
         }
     }
 }
