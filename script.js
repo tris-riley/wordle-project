@@ -110,6 +110,7 @@ function checkSubmit(e) {
 function refreshPage() {
     location.reload();
 }
+// https://www.w3schools.com/jsref/met_loc_reload.asp
 
 n =  new Date();
 y = n.getFullYear();
