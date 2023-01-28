@@ -88,7 +88,7 @@ const checkInput = function check() {
             for (let i = 0; i < userAttempt.value.length; i++) {
                 let letter = userAttempt.value[i];
                 if (randomWord.indexOf(letter) !== -1 && 
-                !matchingLetters.includes(letter)) { // assisted with this implementation 
+                !matchingLetters.includes(letter)) { 
                     matchingLetters += letter;
                 } 
             }
