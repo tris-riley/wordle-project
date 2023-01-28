@@ -40,6 +40,8 @@ const checkInput = function check() {
     let userAttempt = document.getElementById("userAttempt");
     let submitButton = document.getElementById("submit-button");
     let attemptedWordsList = document.getElementById("attempted-words");
+    let answer = document.getElementById("answer")
+
 
     if (
         userAttempt.value.toLowerCase() === randomWord &&
@@ -52,6 +54,7 @@ const checkInput = function check() {
         } attempt to win`;
         userAttempt.remove();
         submitButton.remove();
+        answer.innerHTML = `Answer: ${randomWord}`;
     } else if (userAttempt.value === randomWord && remainingAttempts < 4) {
         document.getElementById(
             "remaining-attempts"
@@ -60,6 +63,7 @@ const checkInput = function check() {
         } attempts to win`;
         userAttempt.remove();
         submitButton.remove();
+        answer.innerHTML = `Answer: ${randomWord}`;
     } else {
         remainingAttempts--;
         if (remainingAttempts === 0) {
@@ -68,6 +72,7 @@ const checkInput = function check() {
             ).innerHTML = `You have ${remainingAttempts} attempts left. Game over`;
             userAttempt.remove();
             submitButton.remove();
+            answer.innerHTML = `Answer: ${randomWord}`;
         } else {
             document.getElementById(
                 "remaining-attempts"
@@ -78,23 +83,22 @@ const checkInput = function check() {
             );
             attemptedWordsList.appendChild(attemptedWord);
 
+            
             let matchingLetters = " ";
             for (let i = 0; i < userAttempt.value.length; i++) {
                 let letter = userAttempt.value[i];
-                if (randomWord.indexOf(letter) !== -1) {
+                if (randomWord.indexOf(letter) !== -1 && 
+                !matchingLetters.includes(letter)) { // assisted with this implementation 
                     matchingLetters += letter;
-                    document.getElementById(
-                        "matched-letters"
-                    ).innerHTML = `Matched Letters: ${matchingLetters}
-                    `;
+                } 
+            }
+            document.getElementById("matched-letters").innerHTML = `Matched Letters: ${matchingLetters}`;
                 }
             }
         }
-    }
-};
+    
 
-// }
-// }
+
 
 const checkSubmit = function checkSubmit(e) {
     if (e && e.keyCode == 13) {
@@ -108,3 +112,10 @@ const checkSubmit = function checkSubmit(e) {
 function refreshPage() {
     location.reload();
 }
+
+n =  new Date();
+y = n.getFullYear();
+m = n.getMonth() + 1;
+d = n.getDate();
+document.getElementById("date").innerHTML = `Current squad as of ${d}/${m}/${y}`;
+// https://stackoverflow.com/questions/32540044/display-current-date-in-dd-mm-yyyy-format/32540196#32540196

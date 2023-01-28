@@ -18,7 +18,14 @@
   
 <main onKeyPress="return checkSubmit(event)">
 <p>A great man once said that the first trophy is to finish in the top four. That's how many attempts you'll have to name the Arsenal player. Can you top the league? </p>
-
+<br>
+<label>Rules</label>
+<ul>
+  <li>Last names as printed on players shirts</li>
+  <li>After 4 attempts the game ends</li>
+  <li id="date">Squad current as of</li>
+</ul>
+<br>
  <input type ="text" id="userAttempt" >
  <button type="button" id="submit-button" onclick="checkInput()">Submit</button>
  <button type="button" id="refresh-button" onclick="refreshPage()">Play Again</button>
@@ -30,6 +37,7 @@
  <h2></h2>
  <ul id="attempted-words"> </ul>
 <p id="game-counter"></p>
+<p id="answer"></p>
 
 </main>
     <script src="script.js" async defer></script>
