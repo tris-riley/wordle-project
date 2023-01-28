@@ -37,6 +37,7 @@ I only grasped the benefits of multiple commits and the use of commit messages a
 ### 4.Functionality
 I added a loop showing the user what letters contained in their guess were also in the final answer. However, with limited remaining time (see lack of planning again), I could not add functionality that would show the position of the matched letters against the correct answer. 
  
+
 # conclusion 
 
 Overall I found this to be an exciting project, but I would have liked to stretch myself further with more considered design and functionality. I would have also wanted to have attempted the extensions. In the future, I would like to improve my planning process, taking the time to understand what I would like to achieve, utilising pseudocode as a framework for guiding this and design tools such as Figma. 

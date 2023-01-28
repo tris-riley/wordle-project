@@ -98,13 +98,11 @@ const checkInput = function check() {
         }
     
 
-
-
-const checkSubmit = function checkSubmit(e) {
+function checkSubmit(e) {
     if (e && e.keyCode == 13) {
         checkInput();
     }
-};
+}
 // https://stackoverflow.com/questions/29943/how-to-submit-a-form-when-the-return-key-is-pressed
 
 
@@ -117,5 +115,6 @@ n =  new Date();
 y = n.getFullYear();
 m = n.getMonth() + 1;
 d = n.getDate();
-document.getElementById("date").innerHTML = `Current squad as of ${d}/${m}/${y}`;
+document.getElementById("date").innerHTML = `Current squad as of ${d}/${m}/${y}` 
+
 // https://stackoverflow.com/questions/32540044/display-current-date-in-dd-mm-yyyy-format/32540196#32540196
