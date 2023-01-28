@@ -30,7 +30,7 @@ const validWords = [
 let randomWord =
     validWords[Math.floor(Math.random() * validWords.length)].toLowerCase();
 ;
-
+console.log(randomWord)
 let remainingAttempts = 4;
 document.getElementById(
     "remaining-attempts"

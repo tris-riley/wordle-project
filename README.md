@@ -10,8 +10,9 @@ Based on the popular Wordle, this game gives the user four opportunities to find
 The randomly generated word is one of the last names of a current Arsenal Football Club player. 
 
 # technologies used
-The game utilises HTML, CSS and Javascript technologies. 
-The HTML page contains a text input box and buttons that trigger Javascript functions, which, when executed, run several loops and manipulate the DOM to output the result of the user's input. 
+HTML
+CSS
+Javascript 
 
 
 # approach 
@@ -21,6 +22,8 @@ At this point, I encountered one of my first problems, planning before beginning
 I started again with the functionality and created a text box that checked a user's input against a randomly generated word. Similarly, a lack of planning became an issue for me here, with loops and loop conditions additively implemented as I either came up against problems or made impromptu decisions about what I wanted the app to do. 
 
 I opted to use a custom set of words, with the theme being current Arsenal Football Club players. 
+
+
 # problems 
 
 ### 1.Planning
