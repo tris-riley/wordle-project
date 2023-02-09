@@ -12979,6 +12979,9 @@ const buttons = document.querySelectorAll("button");
 
 let gameOver = false; 
 
+let letter = 1;
+let row = 1;
+
 
 buttons.forEach((element) => {
     element.addEventListener("click", function () {
@@ -13009,7 +13012,11 @@ function deleteLetter() {
     console.log("delete")
 }
 
-function addLetter() {
-    console.log("letter")
+function addLetter(key) {
+    if (letter < 6) {
+        wordRow[row - 1].querySelectorAll(".word-column")[letter - 1].innerText =
+            key;
+        letter += 1;
+    }
 }
 
