@@ -12977,11 +12977,10 @@ const correctWord = wordList[Math.floor(Math.random() * wordList.length)];
 const wordRow = document.querySelectorAll(".word-row");
 const buttons = document.querySelectorAll("button");
 
-let gameOver = false; 
+let gameOver = false;
 
 let letter = 1;
 let row = 1;
-
 
 buttons.forEach((element) => {
     element.addEventListener("click", function () {
@@ -12989,7 +12988,7 @@ buttons.forEach((element) => {
     });
 });
 
-// only if game is still active  else - alert 
+// only if game is still active  else - alert
 function keyBoardPress(key) {
     if (!gameOver) {
         if (key.toLowerCase() === "enter") {
@@ -13005,18 +13004,25 @@ function keyBoardPress(key) {
 }
 
 function enter() {
-    console.log("enter")
+    console.log("enter");
 }
 
 function deleteLetter() {
-    console.log("delete")
+    const letters = wordRow[row - 1].querySelectorAll(".word-column");
+    for (let i = letters.length - 1; i >= 0; i--) {
+        const element = letters[i];
+        if (element.innerText !== "") {
+            element.innerText = "";
+            letter -= 1;
+        }
+    }
 }
 
 function addLetter(key) {
     if (letter < 6) {
-        wordRow[row - 1].querySelectorAll(".word-column")[letter - 1].innerText =
-            key;
+        wordRow[row - 1].querySelectorAll(".word-column")[
+            letter - 1
+        ].innerText = key;
         letter += 1;
     }
 }
-
