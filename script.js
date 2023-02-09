@@ -12977,11 +12977,11 @@ const correctWord = wordList[Math.floor(Math.random() * wordList.length)];
 const wordRow = document.querySelectorAll(".word-row");
 const buttons = document.querySelectorAll("button");
 
-console.log(wordRow)
-console.log(buttons)
+
 
 buttons.forEach((element) => {
     element.addEventListener("click", function () {
-       console.log("clicked")
+        console.log(element)
     });
 });
+
