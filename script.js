@@ -13014,6 +13014,7 @@ function deleteLetter() {
         if (element.innerText !== "") {
             element.innerText = "";
             letter -= 1;
+            break;
         }
     }
 }
