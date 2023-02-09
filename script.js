@@ -12989,9 +12989,9 @@ buttons.forEach((element) => {
 // only if game is still active  else - alert 
 function keyBoardPress(key) {
     if (!gameOver) {
-        if (key === "enter") {
+        if (key.toLowerCase() === "enter") {
             enter();
-        } else if (key === "delete") {
+        } else if (key.toLowerCase() === "delete") {
             deleteLetter();
         } else {
             addLetter();
