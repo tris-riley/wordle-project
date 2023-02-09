@@ -70,3 +70,15 @@ main {
     justify-content: center;
     align-items: center;
 }
+.keyboard button {
+    background-color: white;
+    color: black;
+    outline: none;
+    border: 1px  solid #353535; 
+    padding: 1em;
+    margin-right: 0.3em;
+    margin-bottom: 0.3em;
+    cursor: pointer;
+    border-radius: 10px;
+} 
+
