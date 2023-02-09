@@ -1,50 +1,62 @@
 <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Find The Word</title>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+    </head>
+    <body>
+        <h1>Find The Word</h1>
 
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Gunner Find A Player</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet"
-  href="https://fonts.googleapis.com/css?family=League+Gothic">
-
-  </head>
-  <body>
-    
-    <header>
-      <h1 id="top">Gunner Find A Player</h1>
-    </header>
-  
-<main onKeyPress="return checkSubmit(event)">
-<p>A great man once said that the first trophy is to finish in the top four. That's how many attempts you'll have to name the Arsenal player. Can you top the league? </p>
-<br>
-<label>Rules</label>
-<ul>
-  <li>First team players only, not including players out on loan</li>
-  <li>Last names as printed on player shirts</li>
-  <li>For double-barreled names, use a space in place of a dash</li>
-  <li id="date">Squad current as of</li>
-  <li>After 4 attempts the game ends</li>
-</ul>
-<br>
- <input type ="text" id="userAttempt" >
- <button type="button" id="submit-button" onclick="checkInput()">Submit</button>
- <button type="button" id="refresh-button" onclick="refreshPage()">Play Again</button>
-
- 
- <p id="remaining-attempts"></p>
- <br>
-
- <h2></h2>
- <p id="matched-letters"></p>
- <h2></h2>
- <ul id="attempted-words"> </ul>
-<p id="game-counter"></p>
-<p id="answer"></p>
-
-</main>
-    <script src="script.js" async defer></script>
-  </body>
+        <main>
+            <div class="game">
+                <div class="word-row">
+                    <div class="word-column"></div>
+                    <div class="word-column"></div>
+                    <div class="word-column"></div>
+                    <div class="word-column"></div>
+                    <div class="word-column"></div>
+                </div>
+                <div class="word-row">
+                    <div class="word-column"></div>
+                    <div class="word-column"></div>
+                    <div class="word-column"></div>
+                    <div class="word-column"></div>
+                    <div class="word-column"></div>
+                </div>
+                <div class="word-row">
+                    <div class="word-column"></div>
+                    <div class="word-column"></div>
+                    <div class="word-column"></div>
+                    <div class="word-column"></div>
+                    <div class="word-column"></div>
+                </div>
+                <div class="word-row">
+                    <div class="word-column"></div>
+                    <div class="word-column"></div>
+                    <div class="word-column"></div>
+                    <div class="word-column"></div>
+                    <div class="word-column"></div>
+                </div>
+                <div class="word-row">
+                    <div class="word-column"></div>
+                    <div class="word-column"></div>
+                    <div class="word-column"></div>
+                    <div class="word-column"></div>
+                    <div class="word-column"></div>
+                </div>
+                <div class="word-row">
+                    <div class="word-column"></div>
+                    <div class="word-column"></div>
+                    <div class="word-column"></div>
+                    <div class="word-column"></div>
+                    <div class="word-column"></div>
+                </div>
+            </div>
+        </main>
+        
+        <script src="script.js"></script>
+    </body>
 </html>
