@@ -12977,11 +12977,39 @@ const correctWord = wordList[Math.floor(Math.random() * wordList.length)];
 const wordRow = document.querySelectorAll(".word-row");
 const buttons = document.querySelectorAll("button");
 
+let gameOver = false; 
 
 
 buttons.forEach((element) => {
     element.addEventListener("click", function () {
-        console.log(element)
+        keyBoardPress(element.getAttribute("data-key"));
     });
 });
+
+// only if game is still active  else - alert 
+function keyBoardPress(key) {
+    if (!gameOver) {
+        if (key === "enter") {
+            enter();
+        } else if (key === "delete") {
+            deleteLetter();
+        } else {
+            addLetter();
+        }
+    } else {
+        alert("Sorry you have finished the game.");
+    }
+}
+
+function enter() {
+    console.log("enter")
+}
+
+function deleteLetter() {
+    console.log("delete")
+}
+
+function addLetter() {
+    console.log("letter")
+}
 
