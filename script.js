@@ -12972,5 +12972,16 @@ const wordList = [
     "ZYMIC",
 ];
 const correctWord = wordList[Math.floor(Math.random() * wordList.length)];
+// console.log(correctWord)
 
-console.log(correctWord)
+const wordRow = document.querySelectorAll(".word-row");
+const buttons = document.querySelectorAll("button");
+
+console.log(wordRow)
+console.log(buttons)
+
+buttons.forEach((element) => {
+    element.addEventListener("click", function () {
+       console.log("clicked")
+    });
+});
