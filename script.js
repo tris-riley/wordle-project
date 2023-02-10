@@ -13071,3 +13071,17 @@ function wordCheck() {
         alert("Sorry, you lose. The correct word was" + " " + correctWord);
     }
 }
+
+function on() {
+    document.getElementById("overlay").style.display = "block";
+  }
+  
+  function off() {
+    document.getElementById("overlay").style.display = "none";
+  }
+
+
+// To Do
+// Pc
+// Overlay w/ instructions 
+// Counter

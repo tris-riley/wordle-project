@@ -8,7 +8,39 @@
         <link rel="stylesheet" type="text/css" href="style.css" />
     </head>
     <body>
+        
         <h1>Find The Word</h1>
+        
+        <div id="overlay" onclick="off()">
+            <div id="text">
+                <h1>Rules</h1>
+                <br>
+                <p>Simlar to the classic game Wordle, the aim here is to find a random 5-letter word using 6 guesses or less.
+                    <br>
+                    Use the on screen keyboard to input your letter selections. 
+                    <br>
+                    <br>
+                    1. Correctly placed letters will turn the tile green. 
+                    <br>
+                    <br>
+                    2.Letters that are in the word but in the wrong position will turn yellow. 
+                    <br>
+                    <br>
+                    3.Incorrect letters will turn grey.
+                    <br>
+                    <br>
+                    Be careful, the game will accept any combination of letters whether they form a valid word or not.
+                    <br> When the game is over, refresh the page to have another go. Good luck! 
+                    <br>
+                    <br>
+                    <h4>Click anywhere to return to the game</h4>
+                </p></div>
+          </div>
+        
+          <div class="instruction-button">
+            <button onclick="on()">Instructions</button>
+        </div>
+
 
         <main>
             <div class="game">
@@ -62,7 +94,7 @@
                     <button data-key="Q">Q</button>
                     <button data-key="W">W</button>
                     <button data-key="E">E</button>
-                    <button data-key="R">R</button>√
+                    <button data-key="R">R</button>
                     <button data-key="T">T</button>
                     <button data-key="Y">Y</button>
                     <button data-key="U">U</button>
