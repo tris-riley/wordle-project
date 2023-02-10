@@ -138,4 +138,16 @@ main {
     align-items: center;
     text-align: center;
     margin: 0px auto;
+    
+}
+
+.instruction-button button {
+    background-color: #ff9a3c;
+    color: black;
+    outline: none;
+    border: 1px  solid #ff9a3c; 
+    width: 90px; 
+    height: 90px;
+    border-radius: 10px;
+    margin-top: 10px;
 }
