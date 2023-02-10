@@ -12972,7 +12972,7 @@ const wordList = [
     "ZYMIC",
 ];
 const correctWord = wordList[Math.floor(Math.random() * wordList.length)];
-// console.log(correctWord)
+console.log(correctWord)
 
 const wordRow = document.querySelectorAll(".word-row");
 const buttons = document.querySelectorAll("button");
@@ -12981,6 +12981,8 @@ let gameOver = false;
 
 let letter = 1;
 let row = 1;
+
+let rightAnswer = false; 
 
 buttons.forEach((element) => {
     element.addEventListener("click", function () {
@@ -12995,7 +12997,7 @@ function keyBoardPress(key) {
         } else if (key.toLowerCase() === "delete") {
             deleteLetter();
         } else {
-            addLetter();
+            addLetter(key);
         }
     } else {
         alert("Sorry you have finished the game.");
@@ -13028,7 +13030,27 @@ function enter() {
     if (letter < 6) {
         alert("You need more letters!"); 
     } else {
-    console.log("enter")
+        wordCheck();
+        row += 1;
+        letter = 1;
      }
 
+}
+
+function wordCheck() {
+    const letters = wordRow[row - 1].querySelectorAll(".word-column");
+    let correctLetters = 0;
+    letters.forEach((element, i) => {
+        const inputLetterPosition = correctWord.toLowerCase().indexOf(element.innerText.toLowerCase());
+
+        if (inputLetterPosition === i) {
+            correctLetters += 1
+            console.log(correctLetters)
+            //colour 
+        } else if (inputLetterPosition >= 0) {
+            console.log("correct letter, wrong position")
+        } else {
+            console.log("wrong letter")
+        }
+    })
 }
