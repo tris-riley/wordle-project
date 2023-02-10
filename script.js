@@ -12972,6 +12972,7 @@ const wordList = [
     "ZYMIC",
 ];
 const correctWord = wordList[Math.floor(Math.random() * wordList.length)];
+// const correctWord = "happy";
 console.log(correctWord);
 
 const wordRow = document.querySelectorAll(".word-row");
@@ -13038,31 +13039,35 @@ function enter() {
 function wordCheck() {
     const letters = wordRow[row - 1].querySelectorAll(".word-column");
     let correctLetters = 0;
-    letters.forEach((element, i) => {
-        const inputLetterPosition = correctWord
+    letters.forEach((element, index) => {
+        const inputLetterPosition = element.innerText.toLowerCase();
+        const indicesInCorrectWord = [];
+        let indexInCorrectWord = correctWord
             .toLowerCase()
-            .indexOf(element.innerText.toLowerCase());
-
-        if (inputLetterPosition === i) {
+            .indexOf(inputLetterPosition);
+        while (indexInCorrectWord >= 0) {
+            indicesInCorrectWord.push(indexInCorrectWord);
+            indexInCorrectWord = correctWord
+                .toLowerCase()
+                .indexOf(inputLetterPosition, indexInCorrectWord + 1);
+        }
+        if (indicesInCorrectWord.includes(index)) {
             correctLetters += 1;
-            // element.style.backgroundColor = "#00FF00";
-            // element.style.color = "#FFFFFF";
-            element.classList.add("green")
-        } else if (inputLetterPosition >= 0) {
-            element.style.backgroundColor = "#FFFF00";
-            element.style.color = "#000000";
+
+            element.classList.add("green");
+        } else if (indicesInCorrectWord.length > 0) {
+            element.classList.add("yellow");
         } else {
             element.style.backgroundColor = "#808080";
             element.style.color = "#FFFFFF";
         }
     });
-        if (correctLetters === 5) {
-        gameOver = true; 
-        rightAnswer = true; 
-        alert('Congratulations you have won the game!')
+    if (correctLetters === 5) {
+        gameOver = true;
+        rightAnswer = true;
+        alert("Congratulations you have won the game!");
     } else if (row === 6) {
-        gameOver = true; 
-        alert("Sorry, you lose. The correct word was" + " " + correctWord)
+        gameOver = true;
+        alert("Sorry, you lose. The correct word was" + " " + correctWord);
+    }
 }
-}
-

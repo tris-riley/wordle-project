@@ -87,12 +87,20 @@ main {
     to {background-color: green;}
   }
 
+  @keyframes yellow {
+    from {background-color: black}
+    to {background-color:rgb(240, 240, 118);}
+  }
 
 .green {
     background-color: green;
-    color: white;
     animation-name: green;
     animation-duration: 2s;
-    animation-iteration-count: 2;
-    animation-direction: alternate
+  }
+
+  .yellow {
+    background-color: rgb(255, 255, 0);
+    color: black;
+    animation-name: yellow;
+    animation-duration: 2s;
   }
