@@ -13079,9 +13079,3 @@ function on() {
   function off() {
     document.getElementById("overlay").style.display = "none";
   }
-
-
-// To Do
-// Pc
-// Overlay w/ instructions 
-// Counter
