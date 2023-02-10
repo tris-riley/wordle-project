@@ -12988,7 +12988,6 @@ buttons.forEach((element) => {
     });
 });
 
-// only if game is still active  else - alert
 function keyBoardPress(key) {
     if (!gameOver) {
         if (key.toLowerCase() === "enter") {
@@ -13003,9 +13002,6 @@ function keyBoardPress(key) {
     }
 }
 
-function enter() {
-    console.log("enter");
-}
 
 function deleteLetter() {
     const letters = wordRow[row - 1].querySelectorAll(".word-column");
@@ -13026,4 +13022,13 @@ function addLetter(key) {
         ].innerText = key;
         letter += 1;
     }
+}
+
+function enter() {
+    if (letter < 6) {
+        alert("You need more letters!"); 
+    } else {
+    console.log("enter")
+     }
+
 }
