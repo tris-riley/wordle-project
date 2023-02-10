@@ -13045,8 +13045,9 @@ function wordCheck() {
 
         if (inputLetterPosition === i) {
             correctLetters += 1;
-            element.style.backgroundColor = "#00FF00";
-            element.style.color = "#FFFFFF";
+            // element.style.backgroundColor = "#00FF00";
+            // element.style.color = "#FFFFFF";
+            element.classList.add("green")
         } else if (inputLetterPosition >= 0) {
             element.style.backgroundColor = "#FFFF00";
             element.style.color = "#000000";
@@ -13055,4 +13056,13 @@ function wordCheck() {
             element.style.color = "#FFFFFF";
         }
     });
+        if (correctLetters === 5) {
+        gameOver = true; 
+        rightAnswer = true; 
+        alert('Congratulations you have won the game!')
+    } else if (row === 6) {
+        gameOver = true; 
+        alert("Sorry, you lose. The correct word was" + " " + correctWord)
 }
+}
+

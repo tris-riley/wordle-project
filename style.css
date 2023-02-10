@@ -82,3 +82,17 @@ main {
     border-radius: 10px;
 } 
 
+@keyframes green {
+    from {background-color: black}
+    to {background-color: green;}
+  }
+
+
+.green {
+    background-color: green;
+    color: white;
+    animation-name: green;
+    animation-duration: 2s;
+    animation-iteration-count: 2;
+    animation-direction: alternate
+  }
